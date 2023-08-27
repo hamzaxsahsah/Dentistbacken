@@ -6,6 +6,7 @@ from .models import Patient, Dentist, Appointment, Invoice
 from .serializers import PatientSerializer, DentistSerializer, AppointmentSerializer, InvoiceSerializer
 
 class PatientViewSet(viewsets.ModelViewSet):
+    
     queryset = Patient.objects.all()
     serializer_class = PatientSerializer
 
