@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Dentistmange',
     'rest_framework',
-    'corsheaders'
+     'corsheaders',
+     
+    
 ]
 
 MIDDLEWARE = [
@@ -51,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'Dentiste.urls'
@@ -125,12 +128,23 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CORS_ALLOW_ALL_ORIGINS = False
+
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:4200",  # Add the actual URL of your Angular app
-    # Add other allowed origins as needed
+    "http://localhost:4200",  # Allow your Angular app's URL
+    # Add other origins as needed
 ]
 
-# You can further customize other CORS settings if required
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    'access-control-allow-origin',
+    # Add other headers as needed
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
